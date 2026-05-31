@@ -6,10 +6,10 @@
 #include "train.h"
 
 int main() {
-    srand(time(NULL)); 
-    
+    srand(time(NULL));
+
     std::ofstream file("result/data.csv");
-    
+
     file << "Length,AllOff,AllOn,Random\n";
 
     for (int n = 10; n <= 500; n += 10) {
@@ -27,15 +27,15 @@ int main() {
 
         Train t3;
         for (int i = 0; i < n; i++) {
-            bool randomLight = rand() % 2; 
+            bool randomLight = rand() % 2; // NOLINT(runtime/threadsafe_fn)
             t3.addCar(randomLight);
         }
         t3.getLength();
         file << t3.getOpCount() << "\n";
     }
-    
+
     file.close();
-    std::cout << "Данные собраны и записаны в result/data.csv" << std::endl;
-    
+    std::cout << "Данные собраны и записаны" << std::endl;
+
     return 0;
 }
