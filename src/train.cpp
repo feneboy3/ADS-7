@@ -1,4 +1,4 @@
-// Copyright 2022 NNTU-CS
+// Copyright 2021 NNTU-CS
 #include "train.h"
 
 Train::Train() {
@@ -16,10 +16,10 @@ void Train::addCar(bool light) {
         first->prev = first;
     } else {
         Car* last = first->prev;
-        
+
         last->next = newCar;
         newCar->prev = last;
-        
+
         newCar->next = first;
         first->prev = newCar;
     }
